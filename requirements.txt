@@ -1,0 +1,8 @@
+gTTS==2.2.4
+nltk==3.7
+numpy==1.22.3
+playsound==1.2.2
+SpeechRecognition==3.8.1
+tensorflow==2.8.0
+tflearn==0.5.0
+Pillow==9.5.0
