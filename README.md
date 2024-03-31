@@ -52,6 +52,11 @@ SmartControl combines computer vision with natural language processing to create
 3. Speak commands such as "assistant" to activate voice mode and interact with the system using natural language.
 4. Perform tasks like opening applications, switching windows, or executing custom commands by voice or hand gestures.
 
+## Code
+- `hand.py` is explained in [hand.md](hand.md)
+- `training.py` is explained in [training.md](training.md)
+- `voicer.py` is explained in [voicer.md](voicer.md)
+
 ## Tutorials
 
 Here are tutorials for the technologies used in SmartControl:
