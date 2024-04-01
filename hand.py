@@ -30,7 +30,11 @@ def count_fingers(hand_landmarks):
 
     return finger_count
 
+rightx=0
+righty=0
+
 def get_click(hand_landmarks,image,h,w):
+        global rightx,righty
         lm = hand_landmarks.landmark
 
         x,y = int(lm[LMS.INDEX_FINGER_TIP].x*w), int(lm[LMS.INDEX_FINGER_TIP].y*h)
@@ -50,6 +54,8 @@ def get_click(hand_landmarks,image,h,w):
         length = np.linalg.norm(index - thumb)
         if length < 0.05:
             pyautogui.click(screen_width-x,y)
+            rightx=screen_width-x
+            righty=y
 
 def auto_scroll(hand_landmarks,image,h,w):
     lm = hand_landmarks.landmark
@@ -146,10 +152,12 @@ def update_frame():
                         speak("Assistant mode activated")
                         time.sleep(2)
                         assistant = True
+                    elif text == "right click":
+                        pyautogui.rightClick(rightx,righty)
                     elif text == "exit":
                         speak("Assistant mode deactivated")
                         assistant = False
-                    else:
+                    elif assistant==False:
                         time.sleep(2)
                         pyautogui.typewrite(text)
                     if assistant and text != "assistant" and text != "exit":
